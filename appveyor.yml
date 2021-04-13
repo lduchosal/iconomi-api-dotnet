@@ -34,7 +34,7 @@ before_build:
   - cmd: nuget restore . 
   
 build_script:
-  - cmd: dotnet pack -c release ./src/IconomiApi
+  - cmd: dotnet pack -c release .
   
 # 1. Regenerate AppVeyor Api Key
 # https://www.nuget.org/account/apikeys

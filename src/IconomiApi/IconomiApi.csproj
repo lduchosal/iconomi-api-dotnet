@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.3</TargetFramework>
+    <TargetFramework>net5</TargetFramework>
     <AssemblyName>IconomiApi</AssemblyName>
     <PackageId>IconomiApi</PackageId>
     <OutputType>Library</OutputType>

@@ -1,4 +1,4 @@
-# IO.Swagger.Model.OrderInfo
+# IconomiApi.Model.OrderInfo
 ## Properties
 
 Name | Type | Description | Notes

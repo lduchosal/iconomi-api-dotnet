@@ -1,4 +1,4 @@
-# IO.Swagger.Model.StrategyBalance
+# IconomiApi.Model.StrategyBalance
 ## Properties
 
 Name | Type | Description | Notes

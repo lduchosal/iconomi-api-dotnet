@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Transaction
+# IconomiApi.Model.Transaction
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# IO.Swagger.Api.TradingApi
+# IconomiApi.Api.TradingApi
 
 All URIs are relative to *https://api.iconomi.com*
 
@@ -23,9 +23,9 @@ Remove user's logical order.
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using IconomiApi.Api;
+using IconomiApi.Client;
+using IconomiApi.Model;
 
 namespace Example
 {
@@ -85,9 +85,9 @@ This endpoint confirms generated trade offer.
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using IconomiApi.Api;
+using IconomiApi.Client;
+using IconomiApi.Model;
 
 namespace Example
 {
@@ -145,9 +145,9 @@ Returns a list of all user's logical orders.
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using IconomiApi.Api;
+using IconomiApi.Client;
+using IconomiApi.Model;
 
 namespace Example
 {
@@ -205,9 +205,9 @@ Generating trade offer.
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using IconomiApi.Api;
+using IconomiApi.Client;
+using IconomiApi.Model;
 
 namespace Example
 {
@@ -265,9 +265,9 @@ Placing user's logical order.
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using IconomiApi.Api;
+using IconomiApi.Client;
+using IconomiApi.Model;
 
 namespace Example
 {
@@ -325,9 +325,9 @@ Returns a user's logical order.
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using IconomiApi.Api;
+using IconomiApi.Client;
+using IconomiApi.Model;
 
 namespace Example
 {

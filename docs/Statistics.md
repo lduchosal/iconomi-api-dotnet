@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Statistics
+# IconomiApi.Model.Statistics
 ## Properties
 
 Name | Type | Description | Notes

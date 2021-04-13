@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Asset
+# IconomiApi.Model.Asset
 ## Properties
 
 Name | Type | Description | Notes

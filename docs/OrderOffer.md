@@ -1,4 +1,4 @@
-# IO.Swagger.Model.OrderOffer
+# IconomiApi.Model.OrderOffer
 ## Properties
 
 Name | Type | Description | Notes

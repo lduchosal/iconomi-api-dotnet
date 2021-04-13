@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Withdraw
+# IconomiApi.Model.Withdraw
 ## Properties
 
 Name | Type | Description | Notes

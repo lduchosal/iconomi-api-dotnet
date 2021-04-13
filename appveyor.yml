@@ -18,7 +18,7 @@ dotnet_csproj:
   informational_version: '{version}'
   
 build:
-  project: src/
+  project: .
 
 branches:
   only:
@@ -29,9 +29,9 @@ init:
   
 before_build:
   - cmd: dotnet --version
-  - cmd: dotnet clean ./src
-  - cmd: dotnet restore ./src --verbosity m
-  - cmd: nuget restore ./src 
+  - cmd: dotnet clean .
+  - cmd: dotnet restore . --verbosity m
+  - cmd: nuget restore . 
   
 build_script:
   - cmd: dotnet pack -c release ./src/IconomiApi

@@ -1,4 +1,4 @@
-# IO.Swagger.Api.UserApi
+# IconomiApi.Api.UserApi
 
 All URIs are relative to *https://api.iconomi.com*
 
@@ -22,9 +22,9 @@ Endpoint returns user's activity (buy, sell, deposit, withdraw).
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using IconomiApi.Api;
+using IconomiApi.Client;
+using IconomiApi.Model;
 
 namespace Example
 {
@@ -86,9 +86,9 @@ Endpoint returns user's crypto address.
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using IconomiApi.Api;
+using IconomiApi.Client;
+using IconomiApi.Model;
 
 namespace Example
 {
@@ -146,9 +146,9 @@ Endpoint requires authentication. Returns the balance based on the authenticatio
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using IconomiApi.Api;
+using IconomiApi.Client;
+using IconomiApi.Model;
 
 namespace Example
 {
@@ -206,9 +206,9 @@ Endpoint returns details about user's transaction.
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using IconomiApi.Api;
+using IconomiApi.Client;
+using IconomiApi.Model;
 
 namespace Example
 {
@@ -266,9 +266,9 @@ Endpoint allows to make withdraw asset from user's account to recipient's addres
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using IconomiApi.Api;
+using IconomiApi.Client;
+using IconomiApi.Model;
 
 namespace Example
 {

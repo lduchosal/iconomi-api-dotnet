@@ -1,4 +1,4 @@
-# IO.Swagger.Api.StrategiesApi
+# IconomiApi.Api.StrategiesApi
 
 All URIs are relative to *https://api.iconomi.com*
 
@@ -25,9 +25,9 @@ The price history returns data points for the given period. Different granulatio
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using IconomiApi.Api;
+using IconomiApi.Client;
+using IconomiApi.Model;
 
 namespace Example
 {
@@ -93,9 +93,9 @@ Endpoint requires manager authentication with institutional role. Returns live b
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using IconomiApi.Api;
+using IconomiApi.Client;
+using IconomiApi.Model;
 
 namespace Example
 {
@@ -153,9 +153,9 @@ Returns the current ticker of the Strategy. The price is refreshed every minute.
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using IconomiApi.Api;
+using IconomiApi.Client;
+using IconomiApi.Model;
 
 namespace Example
 {
@@ -215,9 +215,9 @@ Returns statistics of the strategy; returns, max drawdown and volatility for str
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using IconomiApi.Api;
+using IconomiApi.Client;
+using IconomiApi.Model;
 
 namespace Example
 {
@@ -277,9 +277,9 @@ Returns information about one specific strategy.
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using IconomiApi.Api;
+using IconomiApi.Client;
+using IconomiApi.Model;
 
 namespace Example
 {
@@ -337,9 +337,9 @@ Returns a list of all public Strategies.
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using IconomiApi.Api;
+using IconomiApi.Client;
+using IconomiApi.Model;
 
 namespace Example
 {
@@ -393,9 +393,9 @@ Returns the current structure of a strategy. The same result entity is returned 
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using IconomiApi.Api;
+using IconomiApi.Client;
+using IconomiApi.Model;
 
 namespace Example
 {
@@ -455,9 +455,9 @@ Endpoint requires authentication. Creates and submits a new structure for a give
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using IconomiApi.Api;
+using IconomiApi.Client;
+using IconomiApi.Model;
 
 namespace Example
 {

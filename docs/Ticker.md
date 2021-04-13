@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Ticker
+# IconomiApi.Model.Ticker
 ## Properties
 
 Name | Type | Description | Notes

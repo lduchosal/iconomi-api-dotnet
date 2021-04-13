@@ -1,4 +1,4 @@
-# IO.Swagger.Model.SubmitStructureElement
+# IconomiApi.Model.SubmitStructureElement
 ## Properties
 
 Name | Type | Description | Notes

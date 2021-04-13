@@ -1,4 +1,4 @@
-# IO.Swagger.Model.TradeOffer
+# IconomiApi.Model.TradeOffer
 ## Properties
 
 Name | Type | Description | Notes

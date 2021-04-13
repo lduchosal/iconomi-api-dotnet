@@ -1,4 +1,4 @@
-# IO.Swagger.Model.EnumMapIntervalBigDecimal
+# IconomiApi.Model.EnumMapIntervalBigDecimal
 ## Properties
 
 Name | Type | Description | Notes

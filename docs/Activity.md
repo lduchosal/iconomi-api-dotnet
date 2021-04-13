@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Activity
+# IconomiApi.Model.Activity
 ## Properties
 
 Name | Type | Description | Notes

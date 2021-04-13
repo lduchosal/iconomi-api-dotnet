@@ -1,4 +1,4 @@
-# IO.Swagger.Model.TradeConfirm
+# IconomiApi.Model.TradeConfirm
 ## Properties
 
 Name | Type | Description | Notes

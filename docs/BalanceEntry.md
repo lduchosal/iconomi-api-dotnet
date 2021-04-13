@@ -1,4 +1,4 @@
-# IO.Swagger.Model.BalanceEntry
+# IconomiApi.Model.BalanceEntry
 ## Properties
 
 Name | Type | Description | Notes

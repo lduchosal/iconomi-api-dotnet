@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ChartPoint
+# IconomiApi.Model.ChartPoint
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Strategy
+# IconomiApi.Model.Strategy
 ## Properties
 
 Name | Type | Description | Notes

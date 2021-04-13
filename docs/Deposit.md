@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Deposit
+# IconomiApi.Model.Deposit
 ## Properties
 
 Name | Type | Description | Notes

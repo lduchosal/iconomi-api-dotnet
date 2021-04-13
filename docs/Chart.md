@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Chart
+# IconomiApi.Model.Chart
 ## Properties
 
 Name | Type | Description | Notes

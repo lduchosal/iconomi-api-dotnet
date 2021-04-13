@@ -22,7 +22,7 @@ build:
 
 branches:
   only:
-  - master
+  - main
 
 init:
   - cmd: git config --global core.autocrlf true

@@ -15,7 +15,7 @@
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     <RootNamespace>IconomiApi</RootNamespace>
     <Version>1.3</Version>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageProjectUrl>https://github.com/lduchosal/iconomi-api-dotnet</PackageProjectUrl>
     <RepositoryUrl>https://github.com/lduchosal/iconomi-api-dotnet</RepositoryUrl>

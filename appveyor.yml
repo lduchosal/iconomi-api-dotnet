@@ -1,0 +1,53 @@
+version: '1.3.{build}'
+image: Visual Studio 2019
+
+assembly_info:
+  patch: true
+  file: AssemblyInfo.*
+  assembly_version: "{version}"
+  assembly_file_version: "{version}"
+  assembly_informational_version: "{version}"
+  
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
+  
+build:
+  project: src/
+
+branches:
+  only:
+  - master
+
+init:
+  - cmd: git config --global core.autocrlf true
+  
+before_build:
+  - cmd: dotnet --version
+  - cmd: dotnet clean ./src
+  - cmd: dotnet restore ./src --verbosity m
+  - cmd: nuget restore ./src 
+  
+build_script:
+  - cmd: dotnet pack -c release ./src/IconomiApi
+  
+# 1. Regenerate AppVeyor Api Key
+# https://www.nuget.org/account/apikeys
+# 2. Encrypt configuration data
+# https://ci.appveyor.com/tools/encrypt
+# 3. Paste below
+
+deploy:
+  provider: NuGet
+  api_key:
+    secure: L/RvpHgImO5Fg9k5Dlb413DIP+HRNDioCZrQDaPVP40d6pXWCTC28McvaQ1GLUNk
+  skip_symbols: false
+
+artifacts:
+  - path: '**\IconomiApi*.nupkg'
+    name: nuget

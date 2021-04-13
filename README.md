@@ -65,6 +65,49 @@ namespace Example
 }
 ```
 
+
+```csharp
+using System;
+using System.Diagnostics;
+using IconomiApi.Api;
+using IconomiApi.Client;
+using IconomiApi.Model;
+
+namespace Example
+{
+    public class Example
+    {
+        public void main()
+        {
+
+            string API_KEY = "API_KEY";
+            string API_SECRET = "API_SECRET";
+
+            var users = new UserApi();
+            
+            users.Configuration.AddApiKey("API_KEY", API_KEY);
+            users.Configuration.AddApiKey("API_SECRET", API_SECRET);
+            users.Configuration.ApiClient.RestClient.Timeout = TimeSpan.FromSeconds(5);
+
+            try
+            {
+                var result = users.GetUserBalance();
+                var j = JsonConvert.SerializeObject(result);
+                Console.WriteLine(j);
+            }
+            catch (ApiException e)
+            {
+                Console.WriteLine(e.ErrorCode);
+            }
+        }
+    }
+}
+```
+
+
+
+
+
 <a name="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
 

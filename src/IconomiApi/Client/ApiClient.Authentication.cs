@@ -15,23 +15,34 @@ namespace IconomiApi.Client
 
             Configuration.ApiKey.TryGetValue("API_KEY", out string key);
             Configuration.ApiKey.TryGetValue("API_SECRET", out string secret);
+            Configuration.ApiKey.TryGetValue("API_DEBUG", out string debug);
 
-            var body = request.Parameters.FirstOrDefault(p => p.Type == ParameterType.RequestBody);
-            string sign = Digest(secret, request.Method, request.Resource, timestamp, body);
+            bool.TryParse(debug, out var bdebug);
+            
+            Method method = request.Method;
+            string uri = request.Resource;
+            Parameter body = request.Parameters.FirstOrDefault(p => p.Type == ParameterType.RequestBody);
+
+            string url = _regex.Replace(uri, "");
+            string message = $"{timestamp}{method}{url}{body}";
+
+            string sign = Digest(secret, message);
 
             request.AddHeader("ICN-API-KEY", key);
             request.AddHeader("ICN-SIGN", sign);
             request.AddHeader("ICN-TIMESTAMP", timestamp.ToString());
 
+            if (bdebug)
+            {
+                request.AddHeader("ICN-MESSAGE", message);
+            }
+
         }
 
         private readonly Regex _regex = new Regex(@"^\.");
-        private String Digest(string secret, Method method, string uri, long timestamp, Parameter body)
+        private String Digest(string secret, string digest)
         {
-            string url = _regex.Replace(uri, "");
-            string digest = $"{timestamp}{method}{url}{body}";
             var bsecret = Encoding.UTF8.GetBytes(secret);
-
             using (HMACSHA512 hmac = new HMACSHA512(bsecret))
             {
                 var bytes = Encoding.UTF8.GetBytes(digest);

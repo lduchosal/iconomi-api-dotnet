@@ -46,7 +46,7 @@ namespace IconomiApi.Test
             api.Configuration.AddApiKey("API_DEBUG", API_DEBUG);
             api.Configuration.ApiClient.RestClient.Timeout = TimeSpan.FromSeconds(5);
 
-            string ticker = "COINMARKETGAME";
+            string ticker = "TICKER";
             try
             {
                 var result = api.Structure(ticker);
@@ -55,7 +55,25 @@ namespace IconomiApi.Test
             }
             catch (ApiException e)
             {
-                Console.WriteLine(e.ErrorCode);
+                Assert.Fail(e.ToString());
+            }
+        }
+
+
+
+        [TestMethod]
+        public async Task TestListStrategies()
+        {
+
+            var strategies = new StrategiesApi();
+            strategies.Configuration.ApiClient.RestClient.Timeout = TimeSpan.FromSeconds(5);
+
+            var result = strategies.StrategyList();
+            foreach (var strategy in result)
+            {
+                var j = JsonConvert.SerializeObject(strategy);
+                Console.WriteLine("Name : {0}", strategy.Name);
+                Console.WriteLine(j);
             }
         }
 

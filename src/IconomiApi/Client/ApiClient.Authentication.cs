@@ -10,6 +10,8 @@ namespace IconomiApi.Client
 {
     public partial class ApiClient
     {
+        private readonly Lazy<RestClient> urlBuilder = new Lazy<RestClient>(() => new RestClient("https://api.iconomi.com"));
+
         partial void InterceptRequest(IRestRequest request)
         {
             long timestamp = DateTimeOffset.Now.ToUnixTimeMilliseconds();
@@ -20,8 +22,17 @@ namespace IconomiApi.Client
 
             bool.TryParse(debug, out var bdebug);
 
-            var restClient = new RestClient("https://api.iconomi.com");
-            var uri = restClient.BuildUri(request);
+            if (string.IsNullOrEmpty(key)
+                || string.IsNullOrEmpty(secret))
+            {
+                if (bdebug)
+                {
+                    request.AddHeader("ICN-MESSAGE", "API_KEY or API_SECRET missing");
+                }
+                return;
+            }
+
+            var uri = urlBuilder.Value.BuildUri(request);
             string url = uri.AbsolutePath;
             // string uri = request.Resource;
 

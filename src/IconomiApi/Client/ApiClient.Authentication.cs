@@ -1,4 +1,5 @@
 ﻿using RestSharp.Portable;
+using RestSharp.Portable.HttpClient;
 using System;
 using System.Linq;
 using System.Security.Cryptography;
@@ -18,12 +19,15 @@ namespace IconomiApi.Client
             Configuration.ApiKey.TryGetValue("API_DEBUG", out string debug);
 
             bool.TryParse(debug, out var bdebug);
-            
+
+            var restClient = new RestClient("https://api.iconomi.com");
+            var uri = restClient.BuildUri(request);
+            string url = uri.AbsolutePath;
+            // string uri = request.Resource;
+
             Method method = request.Method;
-            string uri = request.Resource;
             Parameter body = request.Parameters.FirstOrDefault(p => p.Type == ParameterType.RequestBody);
 
-            string url = _regex.Replace(uri, "");
             string message = $"{timestamp}{method}{url}{body}";
 
             string sign = Digest(secret, message);
@@ -39,7 +43,6 @@ namespace IconomiApi.Client
 
         }
 
-        private readonly Regex _regex = new Regex(@"^\.");
         private String Digest(string secret, string digest)
         {
             var bsecret = Encoding.UTF8.GetBytes(secret);

@@ -47,8 +47,8 @@ namespace IconomiApi.Client
 
             Method method = request.Method;
             Parameter body = request.Parameters.FirstOrDefault(p => p.Type == ParameterType.RequestBody);
-
-            string message = $"{timestamp}{method}{url}{body}";
+            string sbody = body == null ? string.Empty : body.Value.ToString();
+            string message = $"{timestamp}{method}{url}{sbody}";
 
             string sign = Digest(secret, message);
 
@@ -58,6 +58,8 @@ namespace IconomiApi.Client
 
             if (bdebug)
             {
+                var bMessage = Encoding.UTF8.GetBytes(message);
+                request.AddHeader("ICN-MESSAGE-B64", Convert.ToBase64String(bMessage));
                 request.AddHeader("ICN-MESSAGE", message);
             }
 

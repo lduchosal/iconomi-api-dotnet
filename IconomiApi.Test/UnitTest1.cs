@@ -32,24 +32,22 @@ namespace IconomiApi.Test
         }
 
 
+        string API_KEY = "API_KEY";
+        string API_SECRET = "API_SECRET";
+        bool API_DEBUG = true;
+        string TICKER = "TICKER";
+
         [TestMethod]
         public async Task TestStrategy()
         {
 
-            string API_KEY = "API_KEY";
-            string API_SECRET = "API_SECRET";
-            string API_DEBUG = "true";
-
             var api = new StrategiesApi();
-            api.Configuration.AddApiKey("API_KEY", API_KEY);
-            api.Configuration.AddApiKey("API_SECRET", API_SECRET);
-            api.Configuration.AddApiKey("API_DEBUG", API_DEBUG);
+            api.Configuration.ApiClient.SetAuthentication(API_KEY, API_SECRET, API_DEBUG);
             api.Configuration.ApiClient.RestClient.Timeout = TimeSpan.FromSeconds(5);
 
-            string ticker = "TICKER";
             try
             {
-                var result = api.Structure(ticker);
+                var result = api.Structure(TICKER);
                 var j = JsonConvert.SerializeObject(result);
                 Console.WriteLine(j);
             }

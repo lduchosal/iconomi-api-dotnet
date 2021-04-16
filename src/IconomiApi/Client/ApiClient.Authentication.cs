@@ -10,15 +10,25 @@ namespace IconomiApi.Client
 {
     public partial class ApiClient
     {
-        private readonly Lazy<RestClient> urlBuilder = new Lazy<RestClient>(() => new RestClient("https://api.iconomi.com"));
+
+        const string API_KEY = "API_KEY";
+        const string API_SECRET = "API_SECRET";
+        const string API_DEBUG = "API_DEBUG";
+        public void SetAuthentication(string key, string secret, bool debug = false)
+        {
+
+            Configuration.ApiKey[API_KEY] = key;
+            Configuration.ApiKey[API_SECRET] = secret;
+            Configuration.ApiKey[API_DEBUG] = debug.ToString();
+        }
 
         partial void InterceptRequest(IRestRequest request)
         {
             long timestamp = DateTimeOffset.Now.ToUnixTimeMilliseconds();
 
-            Configuration.ApiKey.TryGetValue("API_KEY", out string key);
-            Configuration.ApiKey.TryGetValue("API_SECRET", out string secret);
-            Configuration.ApiKey.TryGetValue("API_DEBUG", out string debug);
+            Configuration.ApiKey.TryGetValue(API_KEY, out string key);
+            Configuration.ApiKey.TryGetValue(API_SECRET, out string secret);
+            Configuration.ApiKey.TryGetValue(API_DEBUG, out string debug);
 
             bool.TryParse(debug, out var bdebug);
 
@@ -32,9 +42,8 @@ namespace IconomiApi.Client
                 return;
             }
 
-            var uri = urlBuilder.Value.BuildUri(request);
+            var uri = RestClient.BuildUri(request);
             string url = uri.AbsolutePath;
-            // string uri = request.Resource;
 
             Method method = request.Method;
             Parameter body = request.Parameters.FirstOrDefault(p => p.Type == ParameterType.RequestBody);

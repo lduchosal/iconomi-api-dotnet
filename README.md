@@ -85,8 +85,7 @@ namespace Example
 
             var users = new UserApi();
             
-            users.Configuration.AddApiKey("API_KEY", API_KEY);
-            users.Configuration.AddApiKey("API_SECRET", API_SECRET);
+            users.Configuration.ApiClient.SetAuthentication(API_KEY, API_SECRET, API_DEBUG);
             users.Configuration.ApiClient.RestClient.Timeout = TimeSpan.FromSeconds(5);
 
             try

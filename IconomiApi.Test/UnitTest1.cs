@@ -40,6 +40,7 @@ namespace IconomiApi.Test
         }
 
         [TestMethod]
+        [Ignore]
         public async Task TestStrategy()
         {
 
@@ -79,6 +80,8 @@ namespace IconomiApi.Test
 
 
         [TestMethod]
+        [Ignore]
+
         public async Task TestStrategy_SubmitStructure()
         {
 
@@ -123,6 +126,8 @@ namespace IconomiApi.Test
 
 
         [TestMethod]
+        [Ignore]
+
         public async Task TestStrategy_Structure()
         {
 

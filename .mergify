@@ -1,0 +1,10 @@
+pull_request_rules:
+  - name: automatic merge for Dependabot pull requests
+    conditions:
+      - author~=^dependabot(|-preview)\[bot\]$
+      - check-success=CodeFactor
+      - check-success=continuous-integration/appveyor/pr
+      - check-success=License Compliance
+    actions:
+      merge:
+        method: merge
